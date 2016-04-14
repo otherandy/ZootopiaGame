@@ -1,0 +1,16 @@
+[N:nacho_chicken][V:M]Welcome to the fourth version of my textbox engine.
+I will now dub this version:[P:20]#"The Definitive Dynamic Textbox Engine (V5)".
+What makes it so amazing?[P:20]  Well,[P:20] first off:
+The typing speed of the textbox can be changed within#the text engine itself.
+You can talk normally,[P:20]#[S:S]you can talk slow[S:N],[P:20]#and you can talk [S:R]REALLY[S:N] slow.
+You can also change the 'voice' used for talking.
+[V:L]The low voice is useful for older males.[P:20]#[V:M]The medium voice is useful for most people.[P:20]#[V:H]The high voice can be used for most females.
+[N:0][V:T](And there's a thought voice as well.)
+[N:nacho_chicken][V:M]Another thing you can do in this engine is add a pause.[P:60]  What?[P:20]#You haven't noticed it already?
+[IN:0,0,N,120][IA:0,1,Y,Y][IA:0,2,Y,Y][V:M]You've also probably noticed the name box.[P:20]#This is also fully customizable.[IS:0,1]
+[N:Bizzaro nacho][IO:0,1,Y][IA:0,2,Y,Y][IN:1,0,N,280][IA:1,1,Y,Y][IA:1,2,Y,Y]New to V5 are animated character portraits.[P:20]#They work like the ones used in some RPGs,[P:20]#and you can use up to six at once by default.[IS:1,1]
+[N:nacho_chicken][IC:1][IA:0,1,Y,Y]Also,[P:20] V5 stores text differently than previous versions.[IS:0,1]
+[IO:0,0,Y][IA:0,1,Y,Y][IA:0,2,Y,Y]It stores all the text in text files,[P:10] perfect for circumventing#some of GM's flaws![IS:0,1]
+[IA:0,1,Y,Y][C:1]Colored text[C:C] is also available.[IS:0,1]
+[IA:0,1,Y,Y]There's a default of up to [C:1]four[C:C] per textbox, which is easily changed.[P:10]#Don't abuse [C:2]it[C:C], though. [P:20]Using it [C:3]too often[C:C] looks [C:4]really tacky[C:C].[IS:0,1]
+[IA:0,1,Y,Y]Well,[P:20] that's it for the basic run-through.[P:20]#Take a look at the Readme and the CMD Reference for more info.[P:20]#Be on the lookout for more info and a tutorial video coming soon![IS:0,1]
