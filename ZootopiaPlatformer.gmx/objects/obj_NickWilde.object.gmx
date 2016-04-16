@@ -84,7 +84,16 @@ else if (key_switch) &amp;&amp; (active = true)
     global.active_character = obj_JudyHopps
     }
 }
-
+key_split = (keyboard_check_pressed(ord("Q")))
+if (key_split) &amp;&amp; global.splitscreen = false
+    {
+    global.splitscreen = true
+    scr_doublealert_create()
+    }
+else if (key_split) &amp;&amp; global.splitscreen = true
+    {
+    global.splitscreen = false
+    }
 </string>
           </argument>
         </arguments>

@@ -1,10 +1,10 @@
-if (active = true)
+if (active = true) || global.splitscreen = true
 {
 key_right = (keyboard_check(ord("D")))
 key_left = (-keyboard_check(ord("A")))
 key_jump = (keyboard_check_pressed(vk_space)) || (keyboard_check_pressed(ord("W")))
 key_jump_held = (keyboard_check(vk_space)) || (keyboard_check(ord("W")))
-key_sneak = (keyboard_check(vk_control)) || (keyboard_check(ord("S")))
+key_sneak = (keyboard_check(vk_control)) || (keyboard_check(ord("S"))) || ((place_meeting(x,y-16,obj_collide_parent)) && (sprite_index = spr_JudySneakRight || sprite_index = spr_JudyFlipRight))
 }
 else 
 {
@@ -12,7 +12,7 @@ key_right = 0
 key_left = 0
 key_jump = 0
 key_jump_held = 0
-key_sneak = 0
+key_sneak = 1
 hsp = 0
 }
 //react to input

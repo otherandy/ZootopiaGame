@@ -65,6 +65,9 @@
       <sprites name="Health">
         <sprite>sprites\spr_healthborder</sprite>
         <sprite>sprites\spr_healthbar</sprite>
+        <sprite>sprites\spr_doublealert</sprite>
+        <sprite>sprites\spr_doublealertappear</sprite>
+        <sprite>sprites\spr_doublealertdisappear</sprite>
       </sprites>
       <sprite>sprites\spr_damage</sprite>
       <sprites name="Hacking">
@@ -112,6 +115,9 @@
     <scripts name="Minigames">
       <script>scripts\scr_hack_minigame.gml</script>
     </scripts>
+    <scripts name="UI">
+      <script>scripts\scr_doublealert_create.gml</script>
+    </scripts>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_textbox</font>
@@ -143,6 +149,7 @@
       </objects>
       <objects name="Health">
         <object>objects\obj_health</object>
+        <object>objects\obj_doublealert</object>
       </objects>
       <objects name="Hacking">
         <object>objects\obj_hack</object>
