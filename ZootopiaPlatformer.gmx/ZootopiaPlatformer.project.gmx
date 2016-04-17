@@ -60,6 +60,7 @@
       <sprites name="Textbox">
         <sprite>sprites\spr_textbox_cursor</sprite>
         <sprite>sprites\spr_textbox_arrow</sprite>
+        <sprite>sprites\spr_textbox_deprecated</sprite>
         <sprite>sprites\spr_textbox</sprite>
       </sprites>
       <sprites name="Health">
@@ -154,6 +155,9 @@
       <objects name="Hacking">
         <object>objects\obj_hack</object>
       </objects>
+    </objects>
+    <objects name="Enemies">
+      <object>objects\obj_enemy_test</object>
     </objects>
   </objects>
   <rooms name="rooms">

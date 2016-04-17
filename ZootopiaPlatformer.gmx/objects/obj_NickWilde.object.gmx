@@ -68,52 +68,6 @@ canmove = true
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///hotswitching
-if (instance_exists(obj_text)) || (instance_exists(obj_hack))
-{
-}
-else
-{
-key_switch = (keyboard_check_pressed(ord("J")))
-if (key_switch) &amp;&amp; (active = false)
-    {active = true
-    global.active_character = obj_NickWilde
-    }
-else if (key_switch) &amp;&amp; (active = true)
-    {active = false
-    global.active_character = obj_JudyHopps
-    }
-}
-key_split = (keyboard_check_pressed(ord("Q")))
-if (key_split) &amp;&amp; global.splitscreen = false
-    {
-    global.splitscreen = true
-    scr_doublealert_create()
-    }
-else if (key_split) &amp;&amp; global.splitscreen = true
-    {
-    global.splitscreen = false
-    }
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
             <string>///dialogue
 //single dialogue vars
 Talk_0 = (!instance_exists(obj_text)) &amp;&amp; (place_meeting(x,y,global.active_character)) &amp;&amp; (talking = 0) &amp;&amp; (keyboard_check_pressed(ord("E"))) &amp;&amp; (active = false)
@@ -178,6 +132,52 @@ case states.combat: scr_NickCombatState(); break;
 }
 
 
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///hotswitching
+if (instance_exists(obj_text)) || (instance_exists(obj_hack))
+{
+}
+else
+{
+key_switch = (keyboard_check_pressed(ord("J")))
+if (key_switch) &amp;&amp; (active = false)
+    {active = true
+    global.active_character = obj_NickWilde
+    }
+else if (key_switch) &amp;&amp; (active = true)
+    {active = false
+    global.active_character = obj_JudyHopps
+    }
+}
+key_split = (keyboard_check_pressed(ord("Q")))
+if (key_split) &amp;&amp; global.splitscreen = false
+    {
+    global.splitscreen = true
+    scr_doublealert_create()
+    }
+else if (key_split) &amp;&amp; global.splitscreen = true
+    {
+    global.splitscreen = false
+    }
 </string>
           </argument>
         </arguments>
