@@ -25,16 +25,10 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if view_visible[0] = true
-{
-x=view_xview[0]+100;
-y=view_yview[0]+75;
-}
-else
-{
-x=view_xview[1]+100;
-y=view_yview[1]+75;
-}
+            <string>if place_meeting (x,y,global.active_character)
+    {
+    global.active_character.hp -= 1
+    }
 </string>
           </argument>
         </arguments>

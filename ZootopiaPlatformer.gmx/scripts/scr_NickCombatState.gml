@@ -1,11 +1,11 @@
 sprite_index = spr_NickFlipRight
 if hsp > 0
     {
-    hsp --;
+    hsp -= airfric;
     }
 if hsp < 0
     {
-    hsp ++;
+    hsp += airfric;
     }
 if counter1 > 0 
     {

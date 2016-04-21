@@ -8,6 +8,29 @@
   <parentName>self</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
+    <event eventtype="0" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>stunned = false
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="3" enumb="0">
       <action>
         <libid>1</libid>
@@ -25,10 +48,31 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if place_meeting (x,y,global.active_character)
+            <string>if place_meeting(x,y,global.active_character)
+    {
+    if global.active_character.attack = true
+        {
+        stunned = true
+        }
+    }
+if place_meeting(x,y,global.active_character)
+{  
+if place_meeting(x,y-32,global.active_character)
+    {
+    with global.active_character
+        {
+        vsp = -jumpspeed
+        }
+    if stunned = true &amp;&amp; global.active_character.attack = false
+        {
+        instance_destroy()
+        }
+    }
+else if global.active_character.attack = false &amp;&amp; stunned = false
     {
     global.active_character.hp -= 1
     }
+}
 </string>
           </argument>
         </arguments>

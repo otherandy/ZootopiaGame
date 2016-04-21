@@ -38,14 +38,16 @@ slow = 1;
 walljump = false;
 counter = 0;
 counter1 = 0;
+chaincounter = -1;
 grab = false;
 active = false;
 state = states.normal;
 talking = 0;
 attack = false;
 hp = 100;
-invincible = 0
-canmove = true
+invincible = 0;
+canmove = true;
+
 </string>
           </argument>
         </arguments>
@@ -74,7 +76,7 @@ if (instance_exists(obj_text)) || (instance_exists(obj_hack))
 }
 else
 {
-key_switch = (keyboard_check_pressed(ord("J")))
+key_switch = (keyboard_check_pressed(ord("F")))
 if (key_switch) &amp;&amp; (active = false)
     {active = true
     view_visible[1] = true
@@ -86,7 +88,17 @@ else if (key_switch) &amp;&amp; (active = true)
     view_visible[1] = false
     }
 }
-
+if (keyboard_check_pressed(vk_f2))
+    {
+    if window_get_fullscreen()
+       {
+       window_set_fullscreen(false);
+       }
+    else
+       {
+       window_set_fullscreen(true);
+       }
+    }
 </string>
           </argument>
         </arguments>
@@ -171,6 +183,42 @@ switch (state)
 }
 
 }
+if chaincounter = 0
+    {
+    chain = 0
+    chaincounter = -1
+    }
+if chaincounter &gt; 0
+    {
+    chaincounter --
+    }
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="7">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if sprite_index = spr_JudyPunchRight || sprite_index = spr_JudyKickRight || sprite_index = spr_JudyUpperRight
+    {
+    attack = false
+    state = states.normal
+    }
 </string>
           </argument>
         </arguments>

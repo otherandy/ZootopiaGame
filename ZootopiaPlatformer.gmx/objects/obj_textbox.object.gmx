@@ -29,12 +29,12 @@
 
 if view_visible[0] = true
 {
-x=view_xview[0]+150;
+x=view_xview[0]+200;
 y=view_yview[0]+180;
 }
 else
 {
-x=view_xview[1]+150;
+x=view_xview[1]+200;
 y=view_yview[1]+180;
 }
 if (instance_exists(obj_text))
@@ -71,11 +71,11 @@ else if (!instance_exists(obj_text))
             <kind>1</kind>
             <string>if view_visible[0] = true
 {
-draw_sprite(sprite_index,image_index,view_xview[0]+150,view_yview[0]+180);
+draw_sprite(sprite_index,image_index,view_xview[0]+200,view_yview[0]+180);
 }
 else
 {
-draw_sprite(sprite_index,image_index,view_xview[1]+150,view_yview[1]+180);
+draw_sprite(sprite_index,image_index,view_xview[1]+200,view_yview[1]+180);
 }
 
 </string>

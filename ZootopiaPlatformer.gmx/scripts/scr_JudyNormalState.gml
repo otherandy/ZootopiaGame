@@ -56,7 +56,7 @@ if (place_meeting(x,y+1,obj_collide_parent))
 
 if (key_jump) && (place_meeting(x+1,y,obj_collide_parent)) && (!place_meeting(x,y+1,obj_collide_parent))  
 {
-    vsp = -jumpspeed
+    vsp = -2.4
     hsp = -4
     move = -1
     walljump = true
@@ -64,7 +64,7 @@ if (key_jump) && (place_meeting(x+1,y,obj_collide_parent)) && (!place_meeting(x,
 }
 if (key_jump) && (place_meeting (x-1,y,obj_collide_parent)) && (!place_meeting(x,y+1,obj_collide_parent))
 {
-    vsp = -jumpspeed
+    vsp = -2.4
     hsp = 4
     move = 1
     walljump = true
@@ -180,10 +180,4 @@ else
     slow = 1
     canmove = true
     }
-if (keyboard_check_pressed(ord("K"))) && (active = true) && (attack = false)
-    {
-    state = states.combat
-    hsp = image_xscale * 10
-    attack = true
-    counter1 = 20
-    }
+scr_JudyCombo();

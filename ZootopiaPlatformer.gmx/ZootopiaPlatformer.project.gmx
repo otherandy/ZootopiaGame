@@ -35,6 +35,9 @@
     </sprites>
     <sprites name="JudyHopps">
       <sprite>sprites\spr_JudyIdleRight</sprite>
+      <sprite>sprites\spr_JudyUpperRight</sprite>
+      <sprite>sprites\spr_JudyKickRight</sprite>
+      <sprite>sprites\spr_JudyPunchRight</sprite>
       <sprite>sprites\spr_JudyTalkRight</sprite>
       <sprite>sprites\spr_JudyRunRight</sprite>
       <sprite>sprites\spr_JudyJumpRight</sprite>
@@ -77,13 +80,21 @@
         <sprite>sprites\spr_hack_destroy</sprite>
         <sprite>sprites\spr_hack_bar</sprite>
       </sprites>
+      <sprites name="Cursor">
+        <sprite>sprites\spr_cursor</sprite>
+      </sprites>
     </sprites>
     <sprite>sprites\spr_enemy_test</sprite>
     <sprites name="Interactives">
-      <sprite>sprites\spr_terminal</sprite>
-      <sprite>sprites\spr_terminal_shrink</sprite>
-      <sprite>sprites\spr_terminal_grow</sprite>
-      <sprite>sprites\spr_terminal_close</sprite>
+      <sprites name="Terminal">
+        <sprite>sprites\spr_terminal</sprite>
+        <sprite>sprites\spr_terminal_shrink</sprite>
+        <sprite>sprites\spr_terminal_grow</sprite>
+        <sprite>sprites\spr_terminal_close</sprite>
+      </sprites>
+      <sprites name="Tranquilizers">
+        <sprite>sprites\spr_tranq_gun</sprite>
+      </sprites>
     </sprites>
   </sprites>
   <backgrounds name="background"/>
@@ -92,10 +103,12 @@
     <scripts name="NickStates">
       <script>scripts\scr_NickNormalState.gml</script>
       <script>scripts\scr_NickCombatState.gml</script>
+      <script>scripts\scr_NickCombo.gml</script>
     </scripts>
     <scripts name="JudyStates">
       <script>scripts\scr_JudyNormalState.gml</script>
       <script>scripts\scr_JudyCombatState.gml</script>
+      <script>scripts\scr_JudyCombo.gml</script>
     </scripts>
     <scripts name="textbox">
       <script>scripts\scr_textbox.gml</script>

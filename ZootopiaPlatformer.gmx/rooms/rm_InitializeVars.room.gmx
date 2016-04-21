@@ -2,7 +2,7 @@
 <room>
   <caption></caption>
   <width>1600</width>
-  <height>1200</height>
+  <height>900</height>
   <vsnap>32</vsnap>
   <hsnap>32</hsnap>
   <isometric>0</isometric>
@@ -12,6 +12,7 @@
   <showcolour>-1</showcolour>
   <code>global.active_character = obj_NickWilde;
 global.splitscreen = false;
+cursor_sprite = spr_cursor
 
 
 enum states

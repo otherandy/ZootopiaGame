@@ -87,12 +87,12 @@ draw_set_valign(fa_top);
 
 if view_visible[0] = true
 {
-draw_text_ext(view_xview[0]+10,view_yview[0]+168,print,font_size+(font_size/2),
+draw_text_ext(view_xview[0]+60,view_yview[0]+168,print,font_size+(font_size/2),
     maxlength);
 }
 else
 {
-draw_text_ext(view_xview[1]+10,view_yview[1]+168,print,font_size+(font_size/2),
+draw_text_ext(view_xview[1]+60,view_yview[1]+168,print,font_size+(font_size/2),
     maxlength);
 }
 </string>

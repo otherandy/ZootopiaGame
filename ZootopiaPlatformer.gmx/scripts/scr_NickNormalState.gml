@@ -180,11 +180,5 @@ else
     slow = 1
     canmove = true
     }
-if (keyboard_check_pressed(ord("K"))) && (active = true) && (attack = false)
-    {
-    state = states.combat
-    hsp = image_xscale * 15
-    attack = true
-    counter1 = 30
-    }
+scr_NickCombo();
 
