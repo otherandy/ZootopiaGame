@@ -88,10 +88,12 @@
     <scripts name="NickStates">
       <script>scripts\scr_NickNormalState.gml</script>
       <script>scripts\scr_NickCombatState.gml</script>
+      <script>scripts\scr_NickTalkState.gml</script>
     </scripts>
     <scripts name="JudyStates">
       <script>scripts\scr_JudyNormalState.gml</script>
       <script>scripts\scr_JudyCombatState.gml</script>
+      <script>scripts\scr_JudyTalkState.gml</script>
     </scripts>
     <scripts name="textbox">
       <script>scripts\scr_textbox.gml</script>
@@ -99,6 +101,7 @@
     <scripts name="Dialogue">
       <scripts name="JudyHopps">
         <script>scripts\scr_testRoom_Judy.gml</script>
+        <script>scripts\script14.gml</script>
       </scripts>
       <scripts name="NickWilde">
         <script>scripts\scr_testRoom_Nick.gml</script>
@@ -108,10 +111,14 @@
           <script>scripts\scr_testRoom_BulletinBoard.gml</script>
         </scripts>
       </scripts>
+      <script>scripts\scr_addString.gml</script>
+      <script>scripts\scr_clearTextArray.gml</script>
+      <script>scripts\scr_dialogueInitDefault.gml</script>
     </scripts>
     <scripts name="Minigames">
       <script>scripts\scr_hack_minigame.gml</script>
     </scripts>
+    <script>scripts\README.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_textbox</font>
@@ -139,20 +146,20 @@
     <objects name="UI">
       <objects name="Textbox">
         <object>objects\obj_textbox</object>
-        <object>objects\obj_text</object>
-      </objects>
-      <objects name="Health">
-        <object>objects\obj_health</object>
       </objects>
       <objects name="Hacking">
         <object>objects\obj_hack</object>
       </objects>
+      <object>objects\obj_Globals</object>
     </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_InitializeVars</room>
     <room>rooms\rm_testRoom</room>
   </rooms>
+  <constants number="1">
+    <constant name="MAX_TEXT">32</constant>
+  </constants>
   <help>
     <rtf>help.rtf</rtf>
   </help>

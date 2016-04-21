@@ -49,6 +49,7 @@
           <argument>
             <kind>1</kind>
             <string>///dialogue
+/*
 //single dialogue vars
 Talk_0 = (!instance_exists(obj_text)) &amp;&amp; (place_meeting(x,y,global.active_character)) &amp;&amp; (talking = 0) &amp;&amp; (keyboard_check_pressed(ord("E")))
 Talk_1 = (!instance_exists(obj_text)) &amp;&amp; (talking = 1) &amp;&amp; (place_meeting(x,y,global.active_character)) &amp;&amp; (keyboard_check_pressed(ord("E")))
@@ -77,7 +78,7 @@ if Current_Room = rm_testRoom
     {
     scr_testRoom_BulletinBoard();
     }
-
+*/
 </string>
           </argument>
         </arguments>

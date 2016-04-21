@@ -10,13 +10,32 @@
   <persistent>0</persistent>
   <colour>12632256</colour>
   <showcolour>-1</showcolour>
-  <code>global.active_character = obj_NickWilde;
+  <code>global.active_character = 0; //Sets active character to Judy
+global.pause = false;
+global.dialogue = false;
+global.splitscreen = false;
 
+for (i=0; i&lt;MAX_TEXT; i++) {
+    global.text[i,TEXT.STRING] = "";
+    global.text[i,TEXT.SPEED] = 0;
+    global.text[i,TEXT.VOICE] = noone;
+} //Dialogue database
+global.text_offset = 0;
+
+instance_create(0,0,obj_Globals);
+
+enum TEXT
+{
+    STRING,
+    SPEED,
+    VOICE
+};
 
 enum states
 {
     normal,
-    combat
+    combat,
+    talk
 };
 
 enum e_state

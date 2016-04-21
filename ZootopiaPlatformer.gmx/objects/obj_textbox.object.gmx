@@ -8,7 +8,7 @@
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
-    <event eventtype="3" enumb="2">
+    <event eventtype="0" enumb="0">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -25,28 +25,80 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_speed = .167
+            <string>global.dialogue = true;
+image_speed = .167;
+t=0; tpos=0;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="1" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>scr_clearTextArray();
+global.dialogue = false;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Auto-scroll text
+//Dialogue engine taken from my Pokémon fangame, feel free to use it if you want.
+var len = string_length(global.text[t,TEXT.STRING]);
+if (len==0) instance_destroy();
 
-if view_visible[0] = true
-{
-x=view_xview[0]+150;
-y=view_yview[0]+180;
-}
-else
-{
-x=view_xview[1]+150;
-y=view_yview[1]+180;
-}
-if (instance_exists(obj_text))
-    {
-    visible = true
+if (global.text[t,TEXT.SPEED]&gt;0) {
+    if tpos&lt;len {
+        tpos+=(global.text[t,TEXT.SPEED]/4)+(keyboard_check(ord('X')));
+        if (!audio_is_playing(global.text[t,TEXT.VOICE])) then audio_play_sound(global.text[t,TEXT.VOICE], 0, 0);
     }
-else if (!instance_exists(obj_text))
+}
+else tpos=len;
+
+if keyboard_check_pressed(ord('E'))
+{
+    if (tpos&gt;=len)
     {
-    visible = false
+        if (t &lt; global.text_offset) {
+            audio_play_sound(snd_textbox_move, 0, 0);
+            tpos=0;
+            t+=1;
+        }
+        else instance_destroy();
     }
-
-
+}
 </string>
           </argument>
         </arguments>
@@ -69,15 +121,14 @@ else if (!instance_exists(obj_text))
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if view_visible[0] = true
-{
-draw_sprite(sprite_index,image_index,view_xview[0]+150,view_yview[0]+180);
-}
-else
-{
-draw_sprite(sprite_index,image_index,view_xview[1]+150,view_yview[1]+180);
-}
-
+            <string>///Draw text
+var vx = view_xview[global.active_character], vy = view_yview[global.active_character];
+draw_sprite(sprite_index,image_index,vx+150,vy+180);
+draw_set_font(font);
+draw_set_color(color);
+draw_set_halign(fa_left);
+draw_set_valign(fa_top);
+draw_text_ext(vx+12, vy+188, string_copy(global.text[t,TEXT.STRING],0,tpos), font_size+(font_size/2), 284);
 </string>
           </argument>
         </arguments>

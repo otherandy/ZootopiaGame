@@ -1,21 +1,15 @@
-sprite_index = spr_JudyFlipRight
-if hsp > 0
-    {
-    hsp --;
-    }
-if hsp < 0
-    {
-    hsp ++;
-    }
-if counter1 > 0 
-    {
-    counter1 --
-    }
+sprite_index = spr_JudyFlipRight;
+
+if hsp > 0 then hsp --;
+if hsp < 0 then hsp ++;
+
+if counter1 > 0 then counter1 --;
 else if counter1 = 0 && (place_meeting(x,y+1,obj_collide_parent))
-    {
-    state = states.normal
-    attack = false
-    }
+{
+    state = states.normal;
+    attack = false;
+}
+
 if (place_meeting(x+hsp,y,obj_collide_parent))
 {
     while(!place_meeting(x+sign(hsp),y,obj_collide_parent))
@@ -24,7 +18,9 @@ if (place_meeting(x+hsp,y,obj_collide_parent))
     }
     hsp = 0;
 }
+
 if (vsp < 10) vsp += grav;
+
 //vertical collision
 if (place_meeting(x,y+vsp,obj_collide_parent))
 {
@@ -38,7 +34,7 @@ if (place_meeting(x,y-1,obj_collide_parent))
 {
     if (place_meeting(x,y+1,obj_collide_parent))
     {
-        hsp = image_xscale * -4
+        hsp = image_xscale * -4;
     }
 }
 x += hsp;

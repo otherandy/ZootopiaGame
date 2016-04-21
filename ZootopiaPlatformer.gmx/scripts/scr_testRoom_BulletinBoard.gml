@@ -1,8 +1,9 @@
 //dialogue goes here
+/*
 //test room dialogue
 if Talk_0
     {
-    scr_textbox("Why hello there! I am a bulletin board. ",1,0,0,snd_voicethought)
+    scr_textbox("Why hello there! This is a WIP Zootopia fan game by pixel_havokk and ryuzaki_mrl. ",1,0,0,snd_voicethought)
     talking = 100
     }
 if Talk_1_Cont
@@ -42,3 +43,4 @@ if Talk_6_Cont
         }
     }
 //end test room dialogue
+*/

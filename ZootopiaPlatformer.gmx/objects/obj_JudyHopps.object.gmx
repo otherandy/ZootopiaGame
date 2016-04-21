@@ -33,19 +33,20 @@ hsp = 0;
 vsp = 0;
 jumpspeed = 4;
 movespeed = 2;
+movedir = 1;
 sneak = false;
 slow = 1;
 walljump = false;
 counter = 0;
 counter1 = 0;
 grab = false;
-active = false;
 state = states.normal;
-talking = 0;
+active = true;
+talk = 0;
 attack = false;
-hp = 100;
-invincible = 0
-canmove = true
+hp = 25;
+invincible = 0;
+canmove = true;
 </string>
           </argument>
         </arguments>
@@ -68,47 +69,8 @@ canmove = true
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///hotswitching
-if (instance_exists(obj_text)) || (instance_exists(obj_hack))
-{
-}
-else
-{
-key_switch = (keyboard_check_pressed(ord("J")))
-if (key_switch) &amp;&amp; (active = false)
-    {active = true
-    view_visible[1] = true
-    view_visible[0] = false
-    }
-else if (key_switch) &amp;&amp; (active = true)
-    {active = false
-    view_visible[0] = true
-    view_visible[1] = false
-    }
-}
-
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
             <string>///dialogue
-///dialogue
+/*
 //single dialogue vars
 Talk_0 = (!instance_exists(obj_text)) &amp;&amp; (place_meeting(x,y,global.active_character)) &amp;&amp; (talking = 0) &amp;&amp; (keyboard_check_pressed(ord("E"))) &amp;&amp; (active = false)
 Talk_1 = (!instance_exists(obj_text)) &amp;&amp; (active = false) &amp;&amp; (talking = 1) &amp;&amp; (place_meeting(x,y,global.active_character)) &amp;&amp; (keyboard_check_pressed(ord("E")))
@@ -137,7 +99,7 @@ if Current_Room = rm_testRoom
     {
     scr_testRoom_Judy();
     }
-
+*/
 </string>
           </argument>
         </arguments>
@@ -158,18 +120,13 @@ if Current_Room = rm_testRoom
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Movement
-if (instance_exists(obj_text)) || (instance_exists(obj_hack))
+            <string>///State handling
+//if (!instance_exists(obj_text)) &amp;&amp; (!instance_exists(obj_hack))
+if (!global.pause)
 {
-}
-else
-{
-switch (state)
-{
-    case states.normal: scr_JudyNormalState(); break;
-    case states.combat: scr_JudyCombatState(); break;
-}
-
+    if (state == states.normal) then scr_JudyNormalState();
+    if (state == states.combat) then scr_JudyCombatState();
+    if (state == states.talk) then scr_JudyTalkState();
 }
 </string>
           </argument>
